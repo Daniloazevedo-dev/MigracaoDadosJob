@@ -13,10 +13,10 @@ import javax.sql.DataSource;
 public class BancoDadosBancariosWriterConfig {
 
     @Bean
-    public JdbcBatchItemWriter<DadosBancarios> dadosBancariosWriter(@Qualifier("appDataSource")DataSource dataSource) {
+    public JdbcBatchItemWriter<DadosBancarios> dadosBancariosWriter(@Qualifier("appDataSource") DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<DadosBancarios>()
                 .dataSource(dataSource)
-                .sql("INSERT INTO dados_bancarios (id, pessoa_id, agencia, conta, banco) VALUES (:id, :pessoa_id, :agencia, :conta, :banco)")
+                .sql("INSERT INTO dados_bancarios (id, pessoa_id, agencia, conta, banco) VALUES (:id, :pessoaId, :agencia, :conta, :banco)")
                 .beanMapped()
                 .build();
 

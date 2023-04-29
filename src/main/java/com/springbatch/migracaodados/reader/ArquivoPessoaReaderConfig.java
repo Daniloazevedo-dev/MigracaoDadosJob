@@ -23,7 +23,6 @@ public class ArquivoPessoaReaderConfig {
                 .delimited()
                 .names("nome", "email", "dataNascimento", "idade", "id")
                 .addComment("--")
-                .targetType(Pessoa.class)
                 .fieldSetMapper(fieldSetMapper())
                 .build();
     }
@@ -36,7 +35,7 @@ public class ArquivoPessoaReaderConfig {
                 pessoa.setNome(fieldSet.readString("nome"));
                 pessoa.setEmail(fieldSet.readString("email"));
                 pessoa.setDataNascimento(new Date(fieldSet.
-                        readDate("dataNasimento", "yyyy-MM-dd HH:mm:ss").getTime()));
+                        readDate("dataNascimento", "yyyy-MM-dd HH:mm:ss").getTime()));
                 pessoa.setIdade(fieldSet.readInt("idade"));
                 pessoa.setId(fieldSet.readInt("id"));
                 return pessoa;
