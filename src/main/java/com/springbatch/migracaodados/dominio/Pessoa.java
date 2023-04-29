@@ -1,5 +1,7 @@
 package com.springbatch.migracaodados.dominio;
 
+import org.apache.logging.log4j.util.Strings;
+
 import java.util.Date;
 
 public class Pessoa {
@@ -48,5 +50,9 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public boolean isValida() {
+        return !Strings.isBlank(nome) && !Strings.isBlank(email) && dataNascimento != null;
     }
 }
