@@ -21,7 +21,7 @@ public class MigrarDadosBancariosStepConfig {
             ItemWriter<DadosBancarios> bancoDadosBancariosWriter
     ) {
         return stepBuilderFactory
-                .get("migrarPessoaStep")
+                .get("migrarDadosBancariosStep")
                 .<DadosBancarios, DadosBancarios>chunk(1)
                 .reader(arquivoDadosBancariosReader)
                 .writer(bancoDadosBancariosWriter)
